@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\AnnonceRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AnnonceRepository;
+use App\Entity\Traits\TimeStampableTrait;
 
 /**
  * @ORM\Entity(repositoryClass=AnnonceRepository::class)
@@ -11,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Annonce
 {
+    use TimeStampableTrait;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -33,15 +36,7 @@ class Annonce
      */
     private $category_id;
 
-    /**
-     * @ORM\Column(type="datetime_immutable")
-     */
-    private $created_at;
 
-    /**
-     * @ORM\Column(type="datetime_immutable")
-     */
-    private $updated_at;
 
     public function getId(): ?int
     {
@@ -84,27 +79,4 @@ class Annonce
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->created_at;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $created_at): self
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeImmutable
-    {
-        return $this->updated_at;
-    }
-
-    public function setUpdatedAt(\DateTimeImmutable $updated_at): self
-    {
-        $this->updated_at = $updated_at;
-
-        return $this;
-    }
 }

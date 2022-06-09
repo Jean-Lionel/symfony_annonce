@@ -50,15 +50,16 @@ trait TimeStampableTrait
     public function setCreatedAtAutomatically()
     {
         if ($this->getCreatedAt() === null) {
-            $this->setCreatedAt(new \DateTime());
+            $this->setCreatedAt(new \DateTimeImmutable());
         }
     }
 
     /**
      * @ORM\PreUpdate
+     * @ORM\PrePersist
      */
     public function setUpdatedAtAutomatically()
     {
-        $this->setUpdatedAt(new \DateTime());
+        $this->setUpdatedAt(new \DateTimeImmutable());
     }
 }
