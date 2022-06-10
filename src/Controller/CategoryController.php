@@ -20,8 +20,12 @@ class CategoryController extends AbstractController
      */
     public function index(CategoryRepository $categoryRepository): Response
     {
+
+        $categories = $categoryRepository->findBy([], [
+            "createdAt" => "DESC"
+        ]);
         return $this->render('category/index.html.twig', [
-            'categories' => $categoryRepository->findAll(),
+            'categories' => $categories,
         ]);
     }
 

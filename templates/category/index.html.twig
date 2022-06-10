@@ -3,7 +3,8 @@
 {% block title %}Category index{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+    <h1>Liste des catégories</h1>
+    <a href="{{ path('app_category_new') }}">Nouveau</a>
 
     <table class="table">
         <thead>
@@ -31,5 +32,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_category_new') }}">Create new</a>
+    
 {% endblock %}
