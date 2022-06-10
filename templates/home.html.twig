@@ -13,10 +13,12 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         
+        {% block stylesheets %}
 
-        <style type="text/css">
-            {% include 'css/style.css' %}
-        </style>
+            <link rel="stylesheet" type="text/css" href="/css/style.css">
+        {% endblock %}
+
+        
         <style type="text/css">
 
              nav a{

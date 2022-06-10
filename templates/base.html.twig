@@ -14,9 +14,11 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         
 
-        <style type="text/css">
-            {% include 'css/style.css' %}
-        </style>
+         {% block stylesheets %}
+
+            <link rel="stylesheet" type="text/css" href="/css/style.css">
+        {% endblock %}
+
         <style type="text/css">
 
              nav a{

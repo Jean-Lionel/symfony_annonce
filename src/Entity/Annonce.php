@@ -36,6 +36,11 @@ class Annonce
      */
     private $category_id;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $photo;
+
 
 
     public function getId(): ?int
@@ -75,6 +80,18 @@ class Annonce
     public function setCategoryId(?Category $category_id): self
     {
         $this->category_id = $category_id;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
 
         return $this;
     }
