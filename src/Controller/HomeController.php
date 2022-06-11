@@ -12,10 +12,7 @@ class HomeController extends AbstractController
 {
     
 
-    public function __construct(){
-
-
-    }
+   
     /**
      * @Route("/", name="app_home")
      */
@@ -31,6 +28,18 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
             'annonces' => $annonces,
             'lastAnnonce' => $lastAnnonce ,
+        ]);
+    }
+
+    
+    /**
+     * @Route("det/{id}", name="app_home_show", methods={"GET"})
+     */
+
+    public function show(Annonce $annonce): Response
+    {
+        return $this->render('home/show.html.twig', [
+            'annonce' => $annonce,
         ]);
     }
 }

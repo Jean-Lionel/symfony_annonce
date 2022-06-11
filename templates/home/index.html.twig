@@ -40,7 +40,13 @@
                                 {{ annonce.description }}
                             </p>
                         </div>
-                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                        <div class="card-footer">
+                             <a href="{{ path('app_home_show', {'id': annonce.id}) }}"
+                             class="btn btn-primary btn-sm"
+
+                             >Plus d'informations</a>
+                         
+                        </div>
                     </div>
             </div>
              {% endfor %}

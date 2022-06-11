@@ -31,6 +31,7 @@ class AnnonceType extends AbstractType
                     
                 ]
             ])
+            ->add('durePublication')
         ;
     }
 

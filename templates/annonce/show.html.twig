@@ -19,17 +19,15 @@
                 <th>Description</th>
                 <td>{{ annonce.description }}</td>
             </tr>
-            <tr>
-                <th>Created_at</th>
-                <td>{{ annonce.createdAt ? annonce.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Updated_at</th>
-                <td>{{ annonce.updatedAt ? annonce.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
+           <tr>
+              <td></td>
+              <td>
+                   <a href="">Ajouter des images</a>
+              </td>
+           </tr>
         </tbody>
     </table>
-     <img src="{{ asset('/uploads/photos/WIN-20220418-07-54-33-Pro-62a1707abb365.jpg') }}"> 
+     <img src="{{ asset('/uploads/photos/' ~ annonce.photo) }}" class="img-responsive img-fluid"> 
 
 
     <a href="{{ path('app_annonce_index') }}">back to list</a>

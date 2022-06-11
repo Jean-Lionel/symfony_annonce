@@ -1,0 +1,12 @@
+{% extends 'home.html.twig' %}
+
+{% block title %}Annonce{% endblock %}
+
+{% block body %}
+    <h1>{{ annonce.title }}</h1>
+
+     <img src="{{ asset('/uploads/photos/' ~ annonce.photo) }}" class="img-responsive img-fluid"> 
+    <p>
+        {{ annonce.description }}
+    </p>
+{% endblock %}

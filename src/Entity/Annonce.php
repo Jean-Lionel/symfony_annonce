@@ -41,6 +41,16 @@ class Annonce
      */
     private $photo;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $durePublication;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=AnnoneImage::class, inversedBy="name")
+     */
+    private $annoneImage;
+
 
 
     public function getId(): ?int
@@ -92,6 +102,30 @@ class Annonce
     public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getDurePublication(): ?int
+    {
+        return $this->durePublication;
+    }
+
+    public function setDurePublication(int $durePublication): self
+    {
+        $this->durePublication = $durePublication;
+
+        return $this;
+    }
+
+    public function getAnnoneImage(): ?AnnoneImage
+    {
+        return $this->annoneImage;
+    }
+
+    public function setAnnoneImage(?AnnoneImage $annoneImage): self
+    {
+        $this->annoneImage = $annoneImage;
 
         return $this;
     }
