@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit AnnoneImage{% endblock %}
+
+{% block body %}
+    <h1>Edit AnnoneImage</h1>
+
+    {{ include('annone_image/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_annone_image_index') }}">back to list</a>
+
+    {{ include('annone_image/_delete_form.html.twig') }}
+{% endblock %}

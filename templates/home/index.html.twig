@@ -5,7 +5,32 @@
 {% endblock %}
 
 {% block body %}
-	<div>
+    <form action="">
+            <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-3">
+            <label class="form-label">Categorie</label>
+                <div class="form-group">
+                    <select class="form-control" name="categorie_id">
+                        <option>Selectionner la categorie</option>
+                        {% for cat in categories %}
+                            <option value="{{cat.id}}">{{cat.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+        </div>
+        <div class="col-md-3">
+            <label>Recherche ici !!</label>
+            <div class="form-group">
+                <input class="form-control" name="keyword" placeholder="Search your keyword Here"></input>
+            </div>
+        </div>
+        <div class="col-md-3 mb-2">
+            <button type="submit" class="btn  btn-primary">Rechercher</button>
+        </div>
+    </div>
+
+    </form>	
+    <div>
 		<div class="row gx-4 gx-lg-5 align-items-center my-5">
             <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" 
 
@@ -15,7 +40,11 @@
                 <p>{{
                 lastAnnonce.description
                 }}</p>
-                <a class="btn btn-primary" href="#!">Call to Action!</a>
+                <a href="{{ path('app_home_show', {'id': lastAnnonce.id ?? 0})}}
+                             class="btn btn-primary"
+
+                             >Plus d'informations</a>
+                
             </div>
         </div>
         

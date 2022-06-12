@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New AnnoneImage{% endblock %}
+
+{% block body %}
+    <h1>Create new AnnoneImage</h1>
+
+    {{ include('annone_image/_form.html.twig') }}
+
+    <a href="{{ path('app_annone_image_index') }}">back to list</a>
+{% endblock %}

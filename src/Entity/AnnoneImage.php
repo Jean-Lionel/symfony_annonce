@@ -24,6 +24,16 @@ class AnnoneImage
      */
     private $name;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $photo;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $annonce_id;
+
     public function __construct()
     {
         $this->name = new ArrayCollection();
@@ -60,6 +70,30 @@ class AnnoneImage
                 $name->setAnnoneImage(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getAnnonceId(): ?int
+    {
+        return $this->annonce_id;
+    }
+
+    public function setAnnonceId(int $annonce_id): self
+    {
+        $this->annonce_id = $annonce_id;
 
         return $this;
     }
